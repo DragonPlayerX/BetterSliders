@@ -6,7 +6,7 @@ using VRC.SDKBase;
 using BetterSliders.Config;
 using BetterSliders.Core;
 
-namespace BetterSliders
+namespace BetterSliders.UI
 {
     public class HandCursorBehaviour : MonoBehaviour
     {
