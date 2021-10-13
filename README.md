@@ -8,7 +8,7 @@
 
 ## Features
 
-Deactivates default siders and replacing it with a custom slider which is attached and controlled by your hand.
+Deactivates default sliders and replacing it with a custom slider which is attached and controlled by your hand.
 
 - Slider is fully customizable (size, position offset, rotation offset)
 - You can make exclusions like disabling the custom slider for the UI or for worlds
