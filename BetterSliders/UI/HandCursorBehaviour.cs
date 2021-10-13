@@ -80,19 +80,20 @@ namespace BetterSliders
 
             if (SliderManager.BetterSlidersUISettings.activeSelf)
             {
-                if(Hand == VRC_Pickup.PickupHand.Right)
+                if (Hand == VRC_Pickup.PickupHand.Right)
                 {
                     SliderManager.BetterSlidersUISlider.transform.localScale = SliderManager.SizeModifier * Configuration.SliderSize.Value;
                     SliderManager.BetterSlidersUISlider.transform.position = SliderManager.RightPointer.transform.position + SliderManager.RightPointer.transform.TransformVector(Configuration.SliderPositionOffset.Value);
                     SliderManager.BetterSlidersUISlider.transform.rotation = SliderManager.RightPointer.transform.rotation;
                     SliderManager.BetterSlidersUISlider.transform.localRotation *= Quaternion.Euler(Configuration.SliderRotationOffset.Value);
-                } else
+                }
+                else
                 {
                     SliderManager.BetterSlidersUISlider.transform.localScale = SliderManager.SizeModifier * Configuration.SliderSize.Value;
                     SliderManager.BetterSlidersUISlider.transform.position = SliderManager.LeftPointer.transform.position + SliderManager.LeftPointer.transform.TransformVector(Configuration.SliderPositionOffset.Value);
                     SliderManager.BetterSlidersUISlider.transform.rotation = SliderManager.LeftPointer.transform.rotation;
                     SliderManager.BetterSlidersUISlider.transform.localRotation *= Quaternion.Euler(Configuration.SliderRotationOffset.Value);
-                }    
+                }
                 return;
             }
 

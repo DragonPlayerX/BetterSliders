@@ -7,65 +7,65 @@
 		<AssemblyName Condition="'$(Configuration)'=='Release'">BetterSliders</AssemblyName>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\bettersliders.assetbundle" />
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\bettersliders.assetbundle" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\Libs\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\Libs\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\Libs\Il2Cppmscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2CppSystem">
-      <HintPath>..\Libs\Il2CppSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2CppSystem.Core">
-      <HintPath>..\Libs\Il2CppSystem.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MelonLoader">
-      <HintPath>..\Libs\MelonLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="UnhollowerBaseLib">
-      <HintPath>..\Libs\UnhollowerBaseLib.dll</HintPath>
-    </Reference>
-    <Reference Include="UnhollowerRuntimeLib">
-      <HintPath>..\Libs\UnhollowerRuntimeLib.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>..\Libs\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\Libs\UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\Libs\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\Libs\UnityEngine.InputLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\Libs\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\Libs\UnityEngine.UIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>..\Libs\UnityEngine.VRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="VRCCore-Standalone">
-      <HintPath>..\Libs\VRCCore-Standalone.dll</HintPath>
-    </Reference>
-    <Reference Include="VRCSDK2">
-      <HintPath>..\Libs\VRCSDK2.dll</HintPath>
-    </Reference>
-    <Reference Include="VRCSDKBase">
-      <HintPath>..\Libs\VRCSDKBase.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>..\Libs\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>..\Libs\Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>..\Libs\Il2Cppmscorlib.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem">
+			<HintPath>..\Libs\Il2CppSystem.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppSystem.Core">
+			<HintPath>..\Libs\Il2CppSystem.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="MelonLoader">
+			<HintPath>..\Libs\MelonLoader.dll</HintPath>
+		</Reference>
+		<Reference Include="UnhollowerBaseLib">
+			<HintPath>..\Libs\UnhollowerBaseLib.dll</HintPath>
+		</Reference>
+		<Reference Include="UnhollowerRuntimeLib">
+			<HintPath>..\Libs\UnhollowerRuntimeLib.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>..\Libs\UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>..\Libs\UnityEngine.AssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>..\Libs\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath>..\Libs\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>..\Libs\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>..\Libs\UnityEngine.UIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VRModule">
+			<HintPath>..\Libs\UnityEngine.VRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="VRCCore-Standalone">
+			<HintPath>..\Libs\VRCCore-Standalone.dll</HintPath>
+		</Reference>
+		<Reference Include="VRCSDK2">
+			<HintPath>..\Libs\VRCSDK2.dll</HintPath>
+		</Reference>
+		<Reference Include="VRCSDKBase">
+			<HintPath>..\Libs\VRCSDKBase.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
 </Project>

@@ -58,24 +58,6 @@ namespace BetterSliders.Core
 
             BetterSlidersUISettings.transform.Find("Version").GetComponent<Text>().text = "Version\n" + BetterSlidersMod.Version;
 
-            settingsButton = BetterSlidersUISlider.transform.Find("SettingsButton").GetComponent<Button>();
-            settingsButton.onClick.AddListener(new Action(() =>
-            {
-                if (handCursorBehaviour.Hand == VRC_Pickup.PickupHand.Right)
-                {
-                    BetterSlidersUISettings.transform.position = RightPointer.transform.position + RightPointer.transform.TransformVector(new Vector3(0f, 0f, 0.1f));
-                    BetterSlidersUISettings.transform.rotation = RightPointer.transform.rotation;
-                    BetterSlidersUISettings.transform.localRotation *= Quaternion.Euler(new Vector3(15f, 0f, 0f));
-                }
-                else if (handCursorBehaviour.Hand == VRC_Pickup.PickupHand.Left)
-                {
-                    BetterSlidersUISettings.transform.position = LeftPointer.transform.position + LeftPointer.transform.TransformVector(new Vector3(0f, 0f, 0.1f)); ;
-                    BetterSlidersUISettings.transform.rotation = LeftPointer.transform.rotation;
-                    BetterSlidersUISettings.transform.localRotation *= Quaternion.Euler(new Vector3(15f, 0f, 0f));
-                }
-                BetterSlidersUISettings.SetActive(true);
-            }));
-
             Toggle snapByValueToggle = BetterSlidersUISettings.transform.Find("Toggles/SnapByValueToggle").GetComponent<Toggle>();
             snapByValueToggle.isOn = Configuration.SnapByValue.Value;
             snapByValueToggle.onValueChanged.AddListener(new Action<bool>(newValue =>
@@ -164,8 +146,30 @@ namespace BetterSliders.Core
                 snappingTitle.text = "Snap: " + Math.Round(Configuration.SliderSnapping.Value, 2);
             }));
 
-            sizeTitle.text = "Size: " + Math.Round(Configuration.SliderSize.Value, 2);
-            snappingTitle.text = "Snap: " + Math.Round(Configuration.SliderSnapping.Value, 2);
+            settingsButton = BetterSlidersUISlider.transform.Find("SettingsButton").GetComponent<Button>();
+            settingsButton.onClick.AddListener(new Action(() =>
+            {
+                if (handCursorBehaviour.Hand == VRC_Pickup.PickupHand.Right)
+                {
+                    BetterSlidersUISettings.transform.position = RightPointer.transform.position + RightPointer.transform.TransformVector(new Vector3(0f, 0f, 0.1f));
+                    BetterSlidersUISettings.transform.rotation = RightPointer.transform.rotation;
+                    BetterSlidersUISettings.transform.localRotation *= Quaternion.Euler(new Vector3(15f, 0f, 0f));
+                }
+                else if (handCursorBehaviour.Hand == VRC_Pickup.PickupHand.Left)
+                {
+                    BetterSlidersUISettings.transform.position = LeftPointer.transform.position + LeftPointer.transform.TransformVector(new Vector3(0f, 0f, 0.1f)); ;
+                    BetterSlidersUISettings.transform.rotation = LeftPointer.transform.rotation;
+                    BetterSlidersUISettings.transform.localRotation *= Quaternion.Euler(new Vector3(15f, 0f, 0f));
+                }
+                sizeTitle.text = "Size: " + Math.Round(Configuration.SliderSize.Value, 2);
+                snappingTitle.text = "Snap: " + Math.Round(Configuration.SliderSnapping.Value, 2);
+                snapByValueToggle.isOn = Configuration.SnapByValue.Value;
+                hapticsToggle.isOn = Configuration.SnappingHaptic.Value;
+                applyOnUIToggle.isOn = Configuration.ApplyOnUserInterface.Value;
+                applyOnWorldToggle.isOn = Configuration.ApplyOnWorld.Value;
+                applyOnCameraToggle.isOn = Configuration.ApplyOnCamera.Value;
+                BetterSlidersUISettings.SetActive(true);
+            }));
 
             EnableDisableListener listener = BetterSlidersUISettings.AddComponent<EnableDisableListener>();
             listener.OnDisableEvent += new Action(() => Configuration.Save());
