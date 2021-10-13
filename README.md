@@ -19,10 +19,10 @@ Deactivates default siders and replacing it with a custom slider which is attach
 
 ## Snapping
 
-SnapByValue = false 
+**SnapByValue = false** 
 - The snapping value (default 0.05) is seen as percentage, that means there's a snap every 5% of the slider bar (20 in total).
 
-SnapByValue = true
+**SnapByValue = true**
 - The snapping value (default 0.05) is seen as direct value, that means if you have a slider from 0 - 1.5 there's a snap every 0.05 (30 in total).
 
  I recommend to leave this option turned off because its more dynamic.
@@ -30,6 +30,8 @@ SnapByValue = true
 ---
 
 ### Video
+
+https://user-images.githubusercontent.com/73474149/137186967-2f972c30-057b-4c6c-a464-0f6bbd631001.mp4
 
 ---
 
