@@ -1,6 +1,6 @@
 # Better Sliders
 
-**VRChat-Beta (build 1137) compatible [download](https://github.com/DragonPlayerX/BetterSliders/releases/download/1.0.0/BetterSliders-beta.dll) is also available!**
+**VRChat-Beta (build 1140) compatible [download](https://github.com/DragonPlayerX/BetterSliders/releases/download/1.0.1/BetterSliders-beta.dll) is also available!**
 
 ## Requirements
 
