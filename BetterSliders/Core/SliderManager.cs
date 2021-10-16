@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 using BetterSliders.Config;
 using BetterSliders.UI;
 
-using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80VoBo0;
+using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80VoBoUnique;
 
 namespace BetterSliders.Core
 {
@@ -45,14 +45,18 @@ namespace BetterSliders.Core
             BetterSlidersUISlider.transform.localScale = SizeModifier;
             cursor = BetterSlidersUISlider.transform.Find("Overlay/Cursor").gameObject;
             BetterSlidersUISlider.SetLayerRecursive(12);
-            BetterSlidersUISlider.transform.GetComponent<Canvas>().sortingOrder = 2;
+            Canvas sliderCanvas = BetterSlidersUISlider.transform.GetComponent<Canvas>();
+            sliderCanvas.sortingLayerName = "UI";
+            sliderCanvas.sortingOrder = 2;
             BetterSlidersUISlider.AddComponent<VRCSDK2.VRC_UiShape>();
             BetterSlidersUISlider.SetActive(false);
 
             BetterSlidersUISettings = Object.Instantiate(assetBundle.LoadAsset_Internal("Assets/BetterSlidersUISettings.prefab", Il2CppType.Of<GameObject>()).Cast<GameObject>(), GameObject.Find("/_Application/TrackingVolume/PlayerObjects").transform);
             BetterSlidersUISettings.transform.localScale = SizeModifier * 2;
             BetterSlidersUISettings.SetLayerRecursive(12);
-            BetterSlidersUISettings.transform.GetComponent<Canvas>().sortingOrder = 1;
+            Canvas settingsCanvas = BetterSlidersUISettings.transform.GetComponent<Canvas>();
+            settingsCanvas.sortingLayerName = "UI";
+            settingsCanvas.sortingOrder = 1;
             BetterSlidersUISettings.AddComponent<VRCSDK2.VRC_UiShape>();
             BetterSlidersUISettings.SetActive(false);
 
@@ -212,6 +216,9 @@ namespace BetterSliders.Core
                 return true;
 
             if (!Configuration.ApplyOnWorld.Value && __instance.gameObject.scene.name.ToLower().Equals("worldscene"))
+                return true;
+
+            if (!__instance.interactable)
                 return true;
 
             __instance.interactable = false;

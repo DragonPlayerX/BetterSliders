@@ -132,10 +132,7 @@ namespace BetterSliders.UI
                 if (Configuration.SnappingHaptic.Value && Slider.value != lastValue)
                 {
                     lastValue = Slider.value;
-                    VRCPlayer.field_Internal_Static_VRCPlayer_0.field_Private_VRCPlayerApi_0.PlayHapticEventInHand(Hand, 0.05f, 100f, 0.001f);
-
-                    // For VRChat beta build 1137
-                    //MonoBehaviour2PublicOb_pObSt_pTeBoObStSiUnique.field_Internal_Static_MonoBehaviour2PublicOb_pObSt_pTeBoObStSiUnique_0.field_Private_VRCPlayerApi_0.PlayHapticEventInHand(Hand, 0.05f, 100f, 0.001f);
+                    MonoBehaviour2PublicOb_pObSt_pTeBoObStSiUnique.field_Internal_Static_MonoBehaviour2PublicOb_pObSt_pTeBoObStSiUnique_0.field_Private_VRCPlayerApi_0.PlayHapticEventInHand(Hand, 0.05f, 100f, 0.001f);
                 }
             }
         }
