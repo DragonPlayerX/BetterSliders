@@ -45,14 +45,18 @@ namespace BetterSliders.Core
             BetterSlidersUISlider.transform.localScale = SizeModifier;
             cursor = BetterSlidersUISlider.transform.Find("Overlay/Cursor").gameObject;
             BetterSlidersUISlider.SetLayerRecursive(12);
-            BetterSlidersUISlider.transform.GetComponent<Canvas>().sortingOrder = 2;
+            Canvas sliderCanvas = BetterSlidersUISlider.transform.GetComponent<Canvas>();
+            sliderCanvas.sortingLayerName = "UI";
+            sliderCanvas.sortingOrder = 2;
             BetterSlidersUISlider.AddComponent<VRCSDK2.VRC_UiShape>();
             BetterSlidersUISlider.SetActive(false);
 
             BetterSlidersUISettings = Object.Instantiate(assetBundle.LoadAsset_Internal("Assets/BetterSlidersUISettings.prefab", Il2CppType.Of<GameObject>()).Cast<GameObject>(), GameObject.Find("/_Application/TrackingVolume/PlayerObjects").transform);
             BetterSlidersUISettings.transform.localScale = SizeModifier * 2;
             BetterSlidersUISettings.SetLayerRecursive(12);
-            BetterSlidersUISettings.transform.GetComponent<Canvas>().sortingOrder = 1;
+            Canvas settingsCanvas = BetterSlidersUISettings.transform.GetComponent<Canvas>();
+            settingsCanvas.sortingLayerName = "UI";
+            settingsCanvas.sortingOrder = 1;
             BetterSlidersUISettings.AddComponent<VRCSDK2.VRC_UiShape>();
             BetterSlidersUISettings.SetActive(false);
 
@@ -213,6 +217,20 @@ namespace BetterSliders.Core
 
             if (!Configuration.ApplyOnWorld.Value && __instance.gameObject.scene.name.ToLower().Equals("worldscene"))
                 return true;
+
+            if (!__instance.interactable)
+                return true;
+
+            if (handCursorBehaviour.Slider != null)
+            {
+                handCursorBehaviour.Slider.interactable = true;
+                handCursorBehaviour.Slider = null;
+                BetterSlidersUISlider.SetActive(false);
+                BetterSlidersUISettings.SetActive(false);
+
+                if (!handCursorBehaviour.IsCursorActive)
+                    VRCUiCursorManager.field_Private_Static_VRCUiCursorManager_0.field_Private_Boolean_0 = false;
+            }
 
             __instance.interactable = false;
             handCursorBehaviour.SetSlider(__instance);

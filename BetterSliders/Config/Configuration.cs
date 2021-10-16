@@ -38,9 +38,6 @@ namespace BetterSliders.Config
         {
             if (RoomManager.field_Internal_Static_ApiWorldInstance_0 == null) return;
 
-            // For VRChat beta build 1137
-            //if (MonoBehaviourPublicICurrentLocationBoApDiApBo2InBoObMeUnique.field_Internal_Static_ApiWorldInstance_0 == null) return;
-
             if (HasChanged)
             {
                 MelonPreferences.Save();
