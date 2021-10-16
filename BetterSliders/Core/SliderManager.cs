@@ -221,6 +221,17 @@ namespace BetterSliders.Core
             if (!__instance.interactable)
                 return true;
 
+            if (handCursorBehaviour.Slider != null)
+            {
+                handCursorBehaviour.Slider.interactable = true;
+                handCursorBehaviour.Slider = null;
+                BetterSlidersUISlider.SetActive(false);
+                BetterSlidersUISettings.SetActive(false);
+
+                if (!handCursorBehaviour.IsCursorActive)
+                    VRCUiCursorManager.field_Private_Static_VRCUiCursorManager_0.field_Private_Boolean_0 = false;
+            }
+
             __instance.interactable = false;
             handCursorBehaviour.SetSlider(__instance);
 
