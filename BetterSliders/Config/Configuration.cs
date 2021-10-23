@@ -36,7 +36,7 @@ namespace BetterSliders.Config
 
         public static void Save()
         {
-            if (MonoBehaviourPublicICurrentLocationBoApDiApBo2InBoObMeUnique.field_Internal_Static_ApiWorldInstance_0 == null) return;
+            if (MonoBehaviourPublicBoApDiApBo2InBoObSiUnique.field_Internal_Static_ApiWorldInstance_0 == null) return;
 
             if (HasChanged)
             {
