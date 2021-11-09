@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 using BetterSliders.Config;
 using BetterSliders.UI;
 
-using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80VoBo0;
+using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80VoBoUnique;
 
 namespace BetterSliders.Core
 {
