@@ -1,7 +1,5 @@
 # Better Sliders
 
-**VRChat-Beta (build 1140) compatible [download](https://github.com/DragonPlayerX/BetterSliders/releases/download/1.0.1/BetterSliders-beta.dll) is also available!**
-
 ## Requirements
 
 - [MelonLoader 0.4.x](https://melonwiki.xyz/)
