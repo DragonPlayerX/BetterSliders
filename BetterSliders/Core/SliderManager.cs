@@ -44,7 +44,7 @@ namespace BetterSliders.Core
             BetterSlidersUISlider = Object.Instantiate(assetBundle.LoadAsset_Internal("Assets/BetterSlidersUISlider.prefab", Il2CppType.Of<GameObject>()).Cast<GameObject>(), GameObject.Find("/_Application/TrackingVolume/PlayerObjects").transform);
             BetterSlidersUISlider.transform.localScale = SizeModifier;
             cursor = BetterSlidersUISlider.transform.Find("Overlay/Cursor").gameObject;
-            BetterSlidersUISlider.SetLayerRecursive(12);
+            BetterSlidersUISlider.SetLayerRecursive(LayerMask.NameToLayer("InternalUI"));
             Canvas sliderCanvas = BetterSlidersUISlider.transform.GetComponent<Canvas>();
             sliderCanvas.sortingLayerName = "UI";
             sliderCanvas.sortingOrder = 2;
@@ -53,7 +53,7 @@ namespace BetterSliders.Core
 
             BetterSlidersUISettings = Object.Instantiate(assetBundle.LoadAsset_Internal("Assets/BetterSlidersUISettings.prefab", Il2CppType.Of<GameObject>()).Cast<GameObject>(), GameObject.Find("/_Application/TrackingVolume/PlayerObjects").transform);
             BetterSlidersUISettings.transform.localScale = SizeModifier * 2;
-            BetterSlidersUISettings.SetLayerRecursive(12);
+            BetterSlidersUISettings.SetLayerRecursive(LayerMask.NameToLayer("InternalUI"));
             Canvas settingsCanvas = BetterSlidersUISettings.transform.GetComponent<Canvas>();
             settingsCanvas.sortingLayerName = "UI";
             settingsCanvas.sortingOrder = 1;
