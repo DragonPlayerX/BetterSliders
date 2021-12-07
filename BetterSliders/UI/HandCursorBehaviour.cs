@@ -125,7 +125,7 @@ namespace BetterSliders.UI
                     }
                 }
                 transform.localPosition = new Vector3((1300 * multiplicator) - 650, transform.localPosition.y, transform.localPosition.z);
-                float sliderValue = range * multiplicator;
+                float sliderValue = range * multiplicator + Slider.minValue;
                 Slider.value = sliderValue;
                 currentValue.text = Math.Round(sliderValue, 2).ToString();
 
