@@ -121,8 +121,6 @@ namespace BetterSliders.Core
                 snappingTitle.text = "Snap: " + Math.Round(Configuration.SliderSnapping.Value, 2);
             }));
 
-            BetterSlidersUISettings.transform.Find("PosX/Buttons/Increase").GetComponent<Button>().onClick.AddListener(new Action(() => Configuration.SliderPositionOffset.Value += new Vector3(0.01f, 0, 0)));
-            BetterSlidersUISettings.transform.Find("PosX/Buttons/Decrease").GetComponent<Button>().onClick.AddListener(new Action(() => Configuration.SliderPositionOffset.Value -= new Vector3(0.01f, 0, 0)));
             BetterSlidersUISettings.transform.Find("PosY/Buttons/Increase").GetComponent<Button>().onClick.AddListener(new Action(() => Configuration.SliderPositionOffset.Value += new Vector3(0, 0.01f, 0)));
             BetterSlidersUISettings.transform.Find("PosY/Buttons/Decrease").GetComponent<Button>().onClick.AddListener(new Action(() => Configuration.SliderPositionOffset.Value -= new Vector3(0, 0.01f, 0)));
             BetterSlidersUISettings.transform.Find("PosZ/Buttons/Increase").GetComponent<Button>().onClick.AddListener(new Action(() => Configuration.SliderPositionOffset.Value += new Vector3(0, 0, 0.01f)));
@@ -246,8 +244,9 @@ namespace BetterSliders.Core
 
             if (hand == VRC_Pickup.PickupHand.Right)
             {
+                float offsetX = -((__instance.value - __instance.minValue) / (__instance.maxValue - __instance.minValue) * 0.26f) + 0.13f;
                 BetterSlidersUISlider.transform.localScale = SizeModifier * Configuration.SliderSize.Value;
-                BetterSlidersUISlider.transform.position = RightPointer.transform.position + RightPointer.transform.TransformVector(Configuration.SliderPositionOffset.Value);
+                BetterSlidersUISlider.transform.position = RightPointer.transform.position + RightPointer.transform.TransformVector(Configuration.SliderPositionOffset.Value) + RightPointer.transform.TransformVector(new Vector3(offsetX, 0, 0));
                 BetterSlidersUISlider.transform.rotation = RightPointer.transform.rotation;
                 BetterSlidersUISlider.transform.localRotation *= Quaternion.Euler(Configuration.SliderRotationOffset.Value);
                 handCursorBehaviour.AttachPoint = RightPointer.transform;
@@ -256,8 +255,9 @@ namespace BetterSliders.Core
             }
             else if (hand == VRC_Pickup.PickupHand.Left)
             {
+                float offsetX = -((__instance.value - __instance.minValue) / (__instance.maxValue - __instance.minValue) * 0.26f) + 0.13f;
                 BetterSlidersUISlider.transform.localScale = SizeModifier * Configuration.SliderSize.Value;
-                BetterSlidersUISlider.transform.position = LeftPointer.transform.position + LeftPointer.transform.TransformVector(Configuration.SliderPositionOffset.Value);
+                BetterSlidersUISlider.transform.position = LeftPointer.transform.position + LeftPointer.transform.TransformVector(Configuration.SliderPositionOffset.Value) + LeftPointer.transform.TransformVector(new Vector3(offsetX, 0, 0));
                 BetterSlidersUISlider.transform.rotation = LeftPointer.transform.rotation;
                 BetterSlidersUISlider.transform.localRotation *= Quaternion.Euler(Configuration.SliderRotationOffset.Value);
                 handCursorBehaviour.AttachPoint = LeftPointer.transform;
