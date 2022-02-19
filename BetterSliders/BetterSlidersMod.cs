@@ -19,11 +19,12 @@ namespace BetterSliders
         public static readonly string Version = "1.0.5";
 
         public static BetterSlidersMod Instance { get; private set; }
+        public static MelonLogger.Instance Logger => Instance.LoggerInstance;
 
         public override void OnApplicationStart()
         {
             Instance = this;
-            MelonLogger.Msg("Initializing BetterSliders " + Version + "...");
+            Logger.Msg("Initializing BetterSliders " + Version + "...");
 
             Configuration.Init();
 
@@ -40,9 +41,9 @@ namespace BetterSliders
             if (XRDevice.isPresent)
                 SliderManager.Init();
             else
-                MelonLogger.Msg("No VR Device found. This mod is now disabled.");
+                Logger.Msg("No VR Device found. This mod is now disabled.");
 
-            MelonLogger.Msg("Running version " + Version + " of BetterSliders.");
+            Logger.Msg("Running version " + Version + " of BetterSliders.");
         }
     }
 }

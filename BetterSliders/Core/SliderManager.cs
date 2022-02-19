@@ -187,12 +187,12 @@ namespace BetterSliders.Core
 
             if (RightPointer == null && LeftPointer == null)
             {
-                MelonLogger.Error("Failed to determine correct controller pointers. This mod is now disabled.");
+                BetterSlidersMod.Logger.Error("Failed to determine correct controller pointers. This mod is now disabled.");
                 return;
             }
             else
             {
-                MelonLogger.Msg("Successfully determined controller pointers.");
+                BetterSlidersMod.Logger.Msg("Successfully determined controller pointers.");
             }
 
             controllerInputManager = GameObject.Find("/_Application/InputManager").GetComponent<ControllerInputManager>();
@@ -202,7 +202,7 @@ namespace BetterSliders.Core
 
             MethodInfo method = typeof(Slider).GetMethod("OnPointerDown", BindingFlags.Instance | BindingFlags.Public);
             BetterSlidersMod.Instance.HarmonyInstance.Patch(method, new HarmonyMethod(typeof(SliderManager).GetMethod(nameof(SliderClicked), BindingFlags.Static | BindingFlags.NonPublic)));
-            MelonLogger.Msg("Successfully patched OnPointerDown method.");
+            BetterSlidersMod.Logger.Msg("Successfully patched OnPointerDown method.");
         }
 
         private static bool SliderClicked(Slider __instance, PointerEventData __0)
@@ -268,7 +268,7 @@ namespace BetterSliders.Core
             {
                 __instance.interactable = true;
                 handCursorBehaviour.Slider = null;
-                MelonLogger.Warning("Failed to identify controller input.");
+                BetterSlidersMod.Logger.Warning("Failed to identify controller input.");
             }
 
             BetterSlidersUISlider.SetActive(hand != VRC_Pickup.PickupHand.None);
