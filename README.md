@@ -1,12 +1,8 @@
 # Better Sliders
 
-## Known Issues
-
-- Camera Zoom slider seems to get wrong min and max values but works properly anyways
-
 ## Requirements
 
-- [MelonLoader 0.4.x](https://melonwiki.xyz/)
+- [MelonLoader 0.5.x](https://melonwiki.xyz/)
 
 ## Features
 
