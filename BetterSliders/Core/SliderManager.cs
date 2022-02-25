@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using MelonLoader;
 using UnhollowerRuntimeLib;
 using HarmonyLib;
 using UnityEngine;
@@ -14,7 +13,7 @@ using Object = UnityEngine.Object;
 using BetterSliders.Config;
 using BetterSliders.UI;
 
-using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80VoBo0;
+using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80BuBoUnique;
 
 namespace BetterSliders.Core
 {
