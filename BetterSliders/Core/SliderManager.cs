@@ -13,8 +13,6 @@ using Object = UnityEngine.Object;
 using BetterSliders.Config;
 using BetterSliders.UI;
 
-using ControllerInputManager = MonoBehaviour1Public220Bo080BoSt80BuBoUnique;
-
 namespace BetterSliders.Core
 {
     public class SliderManager
@@ -24,10 +22,12 @@ namespace BetterSliders.Core
         public static GameObject BetterSlidersUISettings;
         public static GameObject RightPointer;
         public static GameObject LeftPointer;
+
         private static GameObject cursor;
         private static Button settingsButton;
         private static HandCursorBehaviour handCursorBehaviour;
-        private static ControllerInputManager controllerInputManager;
+        private static VRCInput rightInput;
+        private static VRCInput leftInput;
 
         public static readonly Vector3 SizeModifier = new Vector3(0.0002f, 0.0002f, 0.0002f);
 
@@ -194,7 +194,8 @@ namespace BetterSliders.Core
                 BetterSlidersMod.Logger.Msg("Successfully determined controller pointers.");
             }
 
-            controllerInputManager = GameObject.Find("/_Application/InputManager").GetComponent<ControllerInputManager>();
+            rightInput = VRCInputManager.field_Private_Static_Dictionary_2_String_VRCInput_0["UseRight"];
+            leftInput = VRCInputManager.field_Private_Static_Dictionary_2_String_VRCInput_0["UseLeft"];
 
             handCursorBehaviour = cursor.AddComponent<HandCursorBehaviour>();
             handCursorBehaviour.CursorAlignmentParent = BetterSlidersUISlider.transform;
@@ -232,8 +233,6 @@ namespace BetterSliders.Core
             __instance.interactable = false;
             handCursorBehaviour.SetSlider(__instance);
 
-            VRCInput rightInput = controllerInputManager.field_Private_VRCInput_21;
-            VRCInput leftInput = controllerInputManager.field_Private_VRCInput_23;
             VRC_Pickup.PickupHand hand = VRC_Pickup.PickupHand.None;
 
             if (rightInput.field_Private_Boolean_0 && (!leftInput.field_Private_Boolean_0 || rightInput.prop_Single_1 <= leftInput.prop_Single_1))
