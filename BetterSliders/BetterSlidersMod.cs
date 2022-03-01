@@ -8,7 +8,7 @@ using BetterSliders.Config;
 using BetterSliders.Core;
 using BetterSliders.UI;
 
-[assembly: MelonInfo(typeof(BetterSlidersMod), "BetterSliders", "1.0.6", "DragonPlayer", "https://github.com/DragonPlayerX/BetterSliders")]
+[assembly: MelonInfo(typeof(BetterSlidersMod), "BetterSliders", "1.0.7", "DragonPlayer", "https://github.com/DragonPlayerX/BetterSliders")]
 [assembly: MelonGame("VRChat", "VRChat")]
 
 namespace BetterSliders
@@ -16,7 +16,7 @@ namespace BetterSliders
     public class BetterSlidersMod : MelonMod
     {
 
-        public static readonly string Version = "1.0.6";
+        public static readonly string Version = "1.0.7";
 
         public static BetterSlidersMod Instance { get; private set; }
         public static MelonLogger.Instance Logger => Instance.LoggerInstance;
